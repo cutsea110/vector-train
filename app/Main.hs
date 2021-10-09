@@ -1,22 +1,20 @@
 module Main where
 
 import Control.Monad.ST
-import qualified Data.Vector as V
-import qualified Data.Vector.Mutable as MV
--- import qualified Data.Vector.Unboxed as V
--- import qualified Data.Vector.Unboxed.Mutable as MV
+import Data.Vector
+import Data.Vector.Mutable
 
-vecHandle :: IO (V.Vector Int)
+vecHandle :: IO (Vector Int)
 vecHandle = do
-    v <- MV.new 1
-    MV.write v 0 (1::Int)
-    V.freeze v
+    v <- new 1
+    write v 0 (1::Int)
+    freeze v
 
-vecHandle2 :: ST s (V.Vector Int)
+vecHandle2 :: ST s (Vector Int)
 vecHandle2 = do
-    v <- MV.new 1
-    MV.write v 0 (1::Int)
-    V.freeze v
+    v <- new 1
+    write v 0 (1::Int)
+    freeze v
 
 main :: IO ()
 main = do
