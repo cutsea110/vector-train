@@ -16,6 +16,11 @@ main = do
   putStrLn "-----------------"
   modVectors
 
+  putStrLn "-----------------"
+  putStrLn " Indexing"
+  putStrLn "-----------------"
+  idxVectors
+
 --------------------------------------
 -- Generating Vectors
 --------------------------------------
@@ -81,3 +86,20 @@ modVectors = do
 
   let x = V.zip (V.enumFromTo 1 10) (V.enumFromTo 1 10)
   putStrLn $ "V.zip (V.enumFromTo 1 10) (V.enumFromTo 1 10) -> " ++ show x
+
+
+idxVectors = do
+  let x = V.enumFromTo 0 10 V.! 4
+  putStrLn $ "V.enumFromTo 0 10 V.! 4 -> " ++ show x
+
+  let x = V.last $ V.enumFromTo 0 10
+  putStrLn $ "V.last $ V.enumFromTo 0 10 -> " ++ show x
+
+  let x = V.head $ V.enumFromTo 0 10
+  putStrLn $ "V.head $ V.enumFromTo 0 10 -> " ++ show x
+  
+  let x = V.tail $ V.enumFromTo 0 10
+  putStrLn $ "V.tail $ V.enumFromTo 0 10 -> " ++ show x
+
+  let x = V.init $ V.enumFromTo 0 10
+  putStrLn $ "V.init $ V.enumFromTo 0 10 -> " ++ show x
