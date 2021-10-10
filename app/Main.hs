@@ -65,6 +65,9 @@ genVectors = do
   let x = V.iterateN 10 (*2) 1
   putStrLn $ "V.iterateN 10 (*2) 1 -> " ++ show x
 
+  let x = V.iterateN 4 (\x -> x <> x) "Hi" :: V.Vector String
+  putStrLn $ "V.iterateN 4 (\\x -> x <> x) \"Hi\" -> " ++ show x
+
 modVectors = do
   let x = V.map (^2) (V.enumFromTo 0 10)
   putStrLn $ "V.map (^2) (V.enumFromTo 0 10) -> " ++ show x
